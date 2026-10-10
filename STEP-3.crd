@@ -2,7 +2,7 @@
   "version": "1.0",
   "name": "Requirement STEP-1",
   "source": {
-    "revision": "step-02-extract-requirements-and-actors"
+    "revision": "step-03-generate-acceptance-tested-user-stories"
   },
   "flows": [
     {
@@ -11,11 +11,11 @@
     }
   ],
   "step": {
-    "no": 2,
+    "no": 3,
     "of": 6,
-    "title": "Add provider boundary",
-    "branch": "step-02-extract-requirements-and-actors",
-    "previous": "STEP-1.crd",
+    "title": "Add core domain state",
+    "branch": "step-03-generate-acceptance-tested-user-stories",
+    "previous": "STEP-2.crd",
     "removed": []
   },
   "components": [
@@ -191,7 +191,7 @@
       "attributes": {
         "step_note": "Calls an injected or deterministic provider instead of acknowledging input."
       },
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.domain_provider",
@@ -230,6 +230,34 @@
           "description": "domain result"
         }
       ],
+      "attributes": {},
+      "step_change": "unchanged"
+    },
+    {
+      "id": "be.step3_domain",
+      "name": "step3_domain",
+      "kind": "function",
+      "side": "backend",
+      "layer": "provider",
+      "description": "STEP-3 adds story drafts with review flags and testable criteria; next STEP maps them to data flows.",
+      "flows": [
+        "requirements"
+      ],
+      "source": {
+        "file": "app/features/requirements/services/user_story_builder.py",
+        "symbol": "domain operation",
+        "lines": [
+          1,
+          45
+        ]
+      },
+      "owner": "requirements",
+      "component_reason": "Separately executable persistence/business unit",
+      "status": "observed",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
       "attributes": {},
       "step_change": "added"
     }
