@@ -1,0 +1,183 @@
+{
+  "version": "1.0",
+  "name": "Requirement STEP-1",
+  "source": {
+    "revision": "step-01"
+  },
+  "flows": [
+    {
+      "id": "requirements",
+      "name": "Requirement request"
+    }
+  ],
+  "step": {
+    "no": 1,
+    "of": 6,
+    "title": "Receive validated requirement requests",
+    "branch": "step-01",
+    "previous": null,
+    "removed": []
+  },
+  "components": [
+    {
+      "id": "be.receive_requirement",
+      "name": "receive_requirement",
+      "kind": "function",
+      "side": "backend",
+      "layer": "door",
+      "description": "STEP-1 receive_requirement component",
+      "flows": [
+        "requirements"
+      ],
+      "source": {
+        "file": "app/features/requirements/router.py",
+        "symbol": "receive_requirement",
+        "revision": "step-01",
+        "lines": [
+          1,
+          45
+        ]
+      },
+      "owner": "requirements",
+      "component_reason": "Typed independent boundary",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input-0",
+          "name": "RequirementRequest",
+          "description": "RequirementRequest"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-0",
+          "title": "handle_requirement",
+          "origin": "imported",
+          "description": "Call handle_requirement",
+          "show": true,
+          "calls": {
+            "component": "be.handle_requirement",
+            "type": "call",
+            "label": "handle_requirement",
+            "evidence": "app/features/requirements/router.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "output-0",
+          "name": "RequirementResponse",
+          "description": "RequirementResponse"
+        }
+      ],
+      "attributes": {
+        "endpoint": "POST /api/requirements"
+      },
+      "step_change": "added"
+    },
+    {
+      "id": "be.handle_requirement",
+      "name": "handle_requirement",
+      "kind": "function",
+      "side": "backend",
+      "layer": "handler",
+      "description": "STEP-1 handle_requirement component",
+      "flows": [
+        "requirements"
+      ],
+      "source": {
+        "file": "app/features/requirements/handlers/handle_requirement.py",
+        "symbol": "handle_requirement",
+        "revision": "step-01",
+        "lines": [
+          1,
+          45
+        ]
+      },
+      "owner": "requirements",
+      "component_reason": "Typed independent boundary",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input-0",
+          "name": "brief",
+          "description": "brief"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-0",
+          "title": "service_requirement",
+          "origin": "imported",
+          "description": "Call service_requirement",
+          "show": true,
+          "calls": {
+            "component": "be.service_requirement",
+            "type": "call",
+            "label": "service_requirement",
+            "evidence": "app/features/requirements/handlers/handle_requirement.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "output-0",
+          "name": "status",
+          "description": "status"
+        },
+        {
+          "id": "output-1",
+          "name": "detail",
+          "description": "detail"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    },
+    {
+      "id": "be.service_requirement",
+      "name": "service_requirement",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "STEP-1 service_requirement component",
+      "flows": [
+        "requirements"
+      ],
+      "source": {
+        "file": "app/features/requirements/services/service_requirement.py",
+        "symbol": "service_requirement",
+        "revision": "step-01",
+        "lines": [
+          1,
+          45
+        ]
+      },
+      "owner": "requirements",
+      "component_reason": "Typed independent boundary",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input-0",
+          "name": "brief",
+          "description": "brief"
+        }
+      ],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "output-0",
+          "name": "detail",
+          "description": "detail"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    }
+  ],
+  "dependencies": [],
+  "unresolved": []
+}
