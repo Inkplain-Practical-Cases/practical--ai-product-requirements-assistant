@@ -60,15 +60,16 @@
     },
     "content": {
       "status": "in_progress",
-      "summary": "Eight categories created. Portal lessons still being authored and checked.",
+      "summary": "Created and MCP-read-back verified Project overview (CRD tree, STEP-6 INKP, real router link), Project structure and three source-backed What-is lessons. Overview now 5/18; total portal 5/45. Six STEP categories and Conclusion still empty.",
       "outputs": {
         "categories_created": 8,
-        "items_target": 45
+        "items_target": 45,
+        "items_saved": 5
       },
       "started_at": "2026-10-10T07:50:44.066Z",
       "finished_at": null,
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T07:50:44.066Z"
+  "updated_at": "2026-10-10T09:14:10.467Z"
 }
