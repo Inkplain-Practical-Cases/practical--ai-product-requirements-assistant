@@ -1,0 +1,67 @@
+{
+  "erd_version": 1,
+  "name": "ai-product-requirements-assistant",
+  "step": "final",
+  "engine": "sqlite",
+  "generated_from": [
+    "app/features/requirements/providers/provider_record_requirement.py",
+    "app/features/requirements/services/service_record_requirement.py",
+    "app/features/requirements/handlers/handle_requirement.py"
+  ],
+  "entities": [
+    {
+      "name": "requirement_requests",
+      "kind": "table",
+      "step_change": "unchanged",
+      "source": "app/features/requirements/providers/provider_record_requirement.py",
+      "description": "Metadata-only product brief intake record. Original text not stored.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "key": "PK"
+        },
+        {
+          "name": "brief_char_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        }
+      ]
+    },
+    {
+      "name": "requirement_analyses",
+      "kind": "table",
+      "step_change": "unchanged",
+      "source": "app/features/requirements/providers/provider_record_requirement.py",
+      "description": "Extracted analysis completion metadata linked to an intake request.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "key": "PK"
+        },
+        {
+          "name": "requirement_id",
+          "type": "TEXT",
+          "references": "requirement_requests.id"
+        },
+        {
+          "name": "result_char_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "status",
+          "type": "TEXT"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        }
+      ]
+    }
+  ],
+  "relations": []
+}
